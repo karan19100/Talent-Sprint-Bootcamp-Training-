@@ -1,0 +1,49 @@
+
+<h1>Login</h1>
+<div class="col-4">
+  <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+    <div class="form-group">
+      <label for="username">Login Id</label>
+      <div class="input-group">
+        <span class="input-group-addon"
+          ><i class="glyphicon glyphicon-user"></i
+        ></span>
+        <input
+          type="email"
+          class="form-control"
+          type="email"
+          name="username"
+          ngModel
+          #loginId="ngModel"
+          required
+          minlength="5"
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <div class="input-group">
+        <span class="input-group-addon"
+          ><i class="glyphicon glyphicon-lock"></i
+        ></span>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          type="password"
+          name="password"
+          ngModel
+          #password="ngModel"
+          required
+          minlength="5"
+        />
+      </div>
+    </div>
+    <input
+      type="submit"
+      value="Login"
+      [disabled]="!loginForm.valid"
+      class="mt-2 btn btn-primary"
+    />
+  </form>
+</div>

@@ -1,0 +1,23 @@
+
+<body>
+<h1>Student Information <i style="font-size: 13px; font-weight: normal">by karan shah</i></h1>
+<table>
+  <tr>
+    <th>Student id</th>
+    <th>Student Name</th>
+    <th>Date of Birth</th>
+    <th>Age</th>
+    <th>Course</th>
+    <th>Fees</th>
+  </tr>
+  <tr *ngFor="let student of studentlist">
+    <td>{{student.Sid}}</td>
+    <td>{{student.Sname |uppercase}}</td>
+    <td>{{student.dob | date:'dd-MMMM-yyyy'}}</td>
+    <td>{{student.dob | age}}</td>
+    <td>{{student.course | lowercase}}</td>
+    <td>{{student.fees | currency:'INR'}}</td>
+
+  </tr>
+</table>
+</body>

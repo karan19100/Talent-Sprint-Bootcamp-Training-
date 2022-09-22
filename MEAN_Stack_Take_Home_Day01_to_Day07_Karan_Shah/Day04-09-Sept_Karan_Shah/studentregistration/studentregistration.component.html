@@ -1,0 +1,56 @@
+
+<div class="form">
+  <form #StudentRegistrationForm="ngForm" (ngSubmit)= "onSubmit(StudentRegistrationForm.value)"novalidate>
+    <h1 class="header">Student Registration</h1>
+    <input type="number" placeholder="Student Id" name="Sid" ngModel required pattern="[0-9]" #Sid="ngModel">
+    <input type="text" placeholder="Student name" name="Sname" ngModel required pattern="[a-zA-Z][a-zA-Z]+" #Sname="ngModel">
+    <input type="date" placeholder="Date of Birth" name="dob" ngModel #dob="ngModel">
+    <input type="text" placeholder="Course" name="course" ngModel required minlength="5" #course="ngModel">
+    <input type="number" placeholder="fees" name="fees" ngModel required #fees="ngModel">
+    <button [disabled]="StudentRegistrationForm.invalid">Submit</button>
+    <input type="reset" id="reset">
+  </form>
+
+
+  <div class="error" *ngIf="Sid.errors?.['required'] && Sid.touched">Student Id is mandatory...</div>
+  <div class="error" *ngIf="Sid.errors?.['pattern'] && Sid.touched">Student Id Min 1 number is required...</div>
+  <div class="error" *ngIf="Sname.errors?.['required'] && Sname.touched">Student name is mandatory...</div>
+  <div class="error" *ngIf="Sname.errors?.['pattern'] && Sname.touched">In Student name Min 2 characters required...</div>
+  <div class="error" *ngIf="course.errors?.['required'] && course.touched">Course is mandatory...</div>
+  <div class="error" *ngIf="course.errors?.['minlength'] && course.touched">Course Min 5 characters required...</div>
+  <div class="error" *ngIf="fees.errors?.['required'] && fees.touched">fees is mandatory...</div>
+  <div class="error" *ngIf="fees.errors?.['minlength'] && fees.touched">please enter the fees in numbers...</div>
+
+</div>
+
+
+<body>
+<h1>Student Information <i style="font-size: 13px; font-weight: normal">by karan shah</i></h1>
+<table>
+  <tr>
+    <th>Student id</th>
+    <th>Student Name</th>
+    <th>Date of Birth</th>
+    <th>Course</th>
+    <th>Fees</th>
+  </tr>
+  <tr *ngFor="let student of studentlist">
+    <td>{{student.Sid}}</td>
+    <td>{{student.Sname |uppercase}}</td>
+    <td>{{student.dob | date:'dd-MMMM-yyyy'}}</td>
+    <td>{{student.course | lowercase}}</td>
+    <td>{{student.fees | currency:'INR'}}</td>
+  </tr>
+</table>
+</body>
+
+<div class="about">
+  <p class="about-links">
+    <a href="https://gitlab.com/karanshah1910" target="_parent">GitLab</a>
+    <a href="https://github.com/karan19100" target="_parent">Github</a>
+  </p>
+  <p class="about-author">
+    &copy; 2022 - 2099 <a href="https://karanshah.tech/" target="_blank">By KARAN SHAH</a>
+  </p>
+</div>
+

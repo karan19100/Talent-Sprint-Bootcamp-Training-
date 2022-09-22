@@ -1,0 +1,33 @@
+
+<h2 class="header-text">My Shopping Cart Items</h2>
+<!--<div class="d-flex justify-content-center">-->
+<!--  <p style="font-size:1.5rem;" class="d-flex align-self-center">total Selected items: {{cartItems.length}}</p>-->
+<!--</div>-->
+
+<div style="padding: 20px;">
+  <table class="table table-striped table-bordered table-hover" >
+    <thead>
+    <tr>
+      <th scope="col" >product Id</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">description</th>
+      <th scope="col">Price</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor = "let product of cartItems">
+      <td>{{product.productId}}</td>
+      <td>{{product.productName}}</td>
+      <td>{{product.description}}</td>
+      <td>{{product.price}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="container">
+  <span class="text-center" *ngIf="cartItems.length == 0">Your shopping cart is empty.</span>
+  <span class="pull-right alert alert-success">Total Quantity: {{cartItems.length}}</span>
+  <button class="pull-left alert alert-danger" (click)="removeBasket(cartItems)">Empty your cart</button>
+  </div>
+</div>

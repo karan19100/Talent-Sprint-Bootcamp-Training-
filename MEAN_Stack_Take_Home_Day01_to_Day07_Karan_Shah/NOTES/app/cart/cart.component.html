@@ -1,0 +1,18 @@
+<h2 style="text-align: center">Selected Items {{cartToDisplay.length}}</h2>
+<div>
+<table border=2 align="center">
+
+<tr>
+  <th>ID</th>
+  <th>NAME</th>
+  <th>DESCRIPTION</th>
+  <th>PRICE</th>
+</tr>
+<tr *ngFor="let item of cartToDisplay">
+  <td>{{item.productId}}</td>
+  <td>{{item.productName | uppercase}}</td>
+  <td>{{item.description}}</td>
+  <td>{{item.Price |currency: 'INR'}}</td>
+  </tr>  
+</table>
+</div>

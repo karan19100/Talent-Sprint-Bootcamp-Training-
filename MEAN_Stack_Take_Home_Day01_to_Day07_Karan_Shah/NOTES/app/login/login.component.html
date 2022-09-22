@@ -1,0 +1,24 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+
+<form #loginForm = "ngForm" (ngSubmit) = "validateLogin(loginForm.value)" class="form-group" novalidate>
+<div class="input-group">
+    <div class="input-group-addon">
+    <i class="glyphicon glyphicon-user"></i></div> <input type = "text" name = "loginId" ngModel class="form-control" required  minlength = "2" #loginId="ngModel">
+</div>
+
+<div class="input-group">
+    <div class="input-group-addon">
+ <i class="glyphicon glyphicon-lock"></i></div> <input type = "password" name = "password" ngModel class="form-control" required minlength = "2" #password="ngModel">
+</div>
+
+ <button class="btn btn-primary" [disabled]="!loginForm.valid"> Login </button>
+</form>
+
+<div class="text-danger">
+<div *ngIf="loginId.errors?.['required'] && loginId.touched">Login Id is mandatory...</div>
+<div *ngIf="loginId.errors?.['minlength'] && loginId.touched">Login Id Min 5 characters required...</div>
+<div *ngIf="password.errors?.['required'] && password.touched">Password is mandatory...</div>
+<div *ngIf="password.errors?.['minlength'] && password.touched">Password Min 5 characters required...</div>
+</div>
