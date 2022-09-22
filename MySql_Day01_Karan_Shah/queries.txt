@@ -1,0 +1,42 @@
+User: root
+Pass: root
+
+create database npci;
+show databases
+
+ use npci; 
+show tables;
+
+Define the structure of Table
+
+
+create table student(st_id int(4) primary key,st_name varchar(20) not null,fee double(8,2));
+
+create table department(dept_id int(4) primary key,dept_name varchar(20),location varchar(20));
+
+
+
+ create table employee(emp_id int(4) primary key,emp_name varchar(20),dept_id int(4), foreign key(dept_id) references department(dept_id));
+
+
+select ename,job,sal,hiredate,dname,loc from emp,dept
+    -> where emp.deptno = dept.deptno;
+
+
+or
+
+select ename,job,sal,hiredate,dname,loc from emp inner join dept using(deptno);
+
+
+select ename,job,sal,hiredate,dname,loc from emp right join dept using(deptno);
+
+
+select ename,job,sal,hiredate,dname,loc from emp left join dept using(deptno);
+
+
+
+select * from emp where sal = (select max(sal) from emp where sal < (select max(sal) from emp));
+
+
+
+

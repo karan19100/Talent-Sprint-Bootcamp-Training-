@@ -1,0 +1,8 @@
+Terminals:
+ Name:        Marks:     Obtained:
+ Student 1     50        2
+ Student 2   50        3
+ Student 3   50        4
+ Student 4     50        5
+ Student 5     50        6
+ Student 6     50        7

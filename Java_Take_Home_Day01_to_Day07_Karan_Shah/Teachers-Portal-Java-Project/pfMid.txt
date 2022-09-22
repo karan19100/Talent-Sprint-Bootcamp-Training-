@@ -1,0 +1,8 @@
+Mids:
+ Name:        Marks:     Obtained:
+ Student 1     30        2
+ Student 2   30        3
+ Student 3   30        4
+ Student 4     30        5
+ Student 5     30        6
+ Student 6     30        7

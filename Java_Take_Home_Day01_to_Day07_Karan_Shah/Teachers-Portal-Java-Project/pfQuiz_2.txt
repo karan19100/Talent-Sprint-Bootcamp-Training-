@@ -1,0 +1,8 @@
+Quizzes:
+ Name:        Marks:     Obtained:
+ Student 1     20        3
+ Student 2   20        2
+ Student 3   20        4
+ Student 4     20        5
+ Student 5     20        6
+ Student 6     20        7
